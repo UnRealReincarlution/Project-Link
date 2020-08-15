@@ -1,0 +1,694 @@
+body {
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    font-family: DIN;
+    text-decoration: none;
+}
+
+* {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "Tungsten";
+    src: url("../fonts/Tungsten.woff2") format("woff");
+}
+
+@font-face {
+    font-family: "DIN";
+    src: url("../fonts/DIN.woff2") format("woff");
+}
+
+@font-face {
+    font-family: "DINBOLD";
+    src: url("../fonts/DINBOLD.woff2") format("woff");
+}
+
+@font-face {
+    font-family: "Header";
+    src: url("../fonts/Header.woff2") format("woff");
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+.tm_div {
+    margin-top: 5%;
+    height: 300px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tm_div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.tournament {
+    transition: .1s ease;
+    display: grid;
+    grid-template-columns: 1fr 15% 10% 1fr 10%;
+
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-weight: 100;
+    color: #0f1923 !important;
+    background-color: #f4f4f4;
+    
+    width: 100%;
+
+    border-radius: 0px;
+    padding: 15px 20px;
+    height: 100%;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    max-height: 70px;
+    z-index: 1;
+}
+
+.tournament:hover {
+    background-color: rgba(15, 15, 15, 0.5);
+    color: #f4f4f4 !important;
+    cursor: context-menu;
+}
+
+
+.tournament h4{
+    font-family: DIN;
+    text-transform: none;
+    margin: 0;
+
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-top: -5px;
+
+    text-align: left;
+}
+
+.tournament h6{
+    font-family: DIN;
+    text-transform: none !important;
+    margin: 0;
+
+    font-size: 1em !important;
+    font-weight: 300;
+}
+
+.tournament h5{
+    font-weight: 100;
+    font-family: DINBOLD;
+    margin: 0;
+}
+
+.tournament button {
+    pointer-events: auto;
+    
+    max-width: 250px;
+
+    padding: 15px 20px;
+    margin: 0;
+    position: relative;
+    background-color: transparent;
+}
+
+.animation_button:hover > .offset_button{
+    transform: translateY(-0%) skew(0deg);
+}
+
+.animation_button:hover >  .offset_text {
+    display: block;
+}
+
+.offset_text {
+    display: none;
+    position: absolute;
+    color: #0f1923;
+    z-index: 2021;
+
+    font-family: DINBOLD;
+    text-transform: uppercase;
+    font-size: 14px;
+
+    align-self: center;
+    margin: 0;
+}
+
+.offset_button {
+    transform: translateX(-100%) skew(-10deg);
+    left: -5%;
+    background-color: #f4f4f4;
+    cursor: pointer;
+
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 120%;
+    top: 0;
+    z-index: 1;
+    transition: transform .3s ease-out;
+
+    color: #FF4655;
+}
+
+.animation_button {
+    background-color: #FF4655;
+    flex: 1 auto;
+
+
+    display: flex;
+    justify-content: center;
+    
+    overflow: hidden;
+    position: relative;
+    z-index: 999;
+}
+
+.animation_button:hover {
+    cursor: pointer;
+}
+
+section {
+    height: 100vh;
+    margin: 0;
+
+    padding-left: 7.3%;
+    padding-right: 7.3%;
+
+    padding-bottom: 0;
+    padding-top: 0;
+    
+    background-color: #f9f9f9;
+
+    overflow: hidden;
+}
+
+section .content {
+    padding: 6rem;
+    margin: 0 auto;
+
+    height: auto;
+
+    max-width: 123rem;
+    position: relative;
+}
+
+section .content h2 {
+    font-size: 2.5em;
+    font-family: DIN;
+    text-transform: uppercase;
+    margin: 0;
+    
+    margin-left: 54px;
+
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #0f1923;
+    mix-blend-mode: revert;
+}
+
+section #character_overlay {
+    position: absolute;
+    right: 0;
+    top: 100px;
+
+    height: 100%;
+}
+
+.absolute_content::before {
+    content: "";
+    height: 15px;
+    width: 100px;
+    border-bottom: 2px solid;
+    border-top: 4px solid;
+    position: absolute;
+    left: 5%;
+}
+
+section h1 {
+    font-family: DIN;
+    font-size: 8rem;
+    font-weight: 300;
+
+    line-height: 0.86;
+
+    text-transform: uppercase;
+    color: #0f1923;
+    mix-blend-mode: revert;
+    margin-bottom: 5px;
+
+    z-index: 1;
+
+    height: fit-content;
+    position: relative;
+}
+
+section h1::after {
+    content: "ESPORTS";
+    height: 15px;
+    width: 100px;
+
+    border-bottom: 5px solid;   
+
+    position: absolute;
+    bottom: 0;
+
+    font-size: 15px;
+    /*background-color: #0f1923;  */
+}
+
+section h1::before {
+    content: "Project: \00000a Link";
+    white-space: pre;
+    position: absolute;
+
+    font-size: 15rem;
+    left: -5%;
+    top: -50%;
+    z-index: 0;
+
+    color: transparent;
+
+    -webkit-text-stroke: 1px #0f1923;
+    opacity: 0.2;
+    /*background-color: #0f1923;  */
+}
+
+section:not(:first-of-type) h1::before {
+    -webkit-text-stroke: 1px #f4f4f4;
+}
+
+header {
+    font-size: 14px !important;
+    font-weight: 800;
+
+    font-family: Header;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    text-transform: uppercase;
+
+    background-color: #111111; /* #0f1923*/
+    color: #F9F9F9;
+
+    height: 56px;
+    padding: 0 16px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 2020;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+
+    border-bottom: 2px solid rgba(51, 51, 51, 0.25);
+}
+
+header > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
+
+header h1 {
+    margin-top: -5px;
+    font-size: 1.5em;
+    font-weight: 100;
+
+    height: 100%;
+    align-items: center;
+    display: flex;
+}
+
+header h1:hover {
+    cursor: pointer;
+    color: #ece8e1;
+}
+
+header a {
+    font-size: 12px !important;
+    font-weight: 300;
+    border-bottom: 2px solid transparent;
+
+    text-decoration: none;
+    color: #F9F9F9;
+}
+
+header a:hover {
+    cursor: pointer;
+    color: #ece8e1;
+    border-bottom: 2px solid #FF4655;
+}
+
+header > div > a {
+    align-items: center;
+    height: 100%;
+    display: flex;
+
+    margin-bottom: -2px;
+}
+
+header h6 {
+    font-family: DIN;
+    font-weight: 100;
+    font-size: 12px;
+
+    margin: 5px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+header * {
+    margin: 0;
+}
+
+button {
+    border: none;
+    border-radius: 0px;
+    padding: 10px 20px;
+    background-color: #FF4655;
+    color: white;
+
+    font-weight: 100;
+    font-family: DINBOLD;
+    text-transform: uppercase;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+
+    height: 250px;
+    background-color: #f4f4f4;
+    padding: 90px;
+}
+
+#footer h1 {
+    margin-top: -5px;
+    font-size: 1.7em;
+    margin-bottom: 5px;
+    font-family: Header;
+
+    text-transform: uppercase;
+}
+
+#footer > div {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#footer h6 {
+    text-transform: uppercase;
+    font-weight: 100;
+    font-size: 12px;
+}
+
+#footer > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#footer h4 {
+    text-transform: uppercase;
+    font-family: DINBOLD;
+}
+
+#footer .contenter img{
+    height: 55px;
+    width: 55px;
+}
+
+#schedule h1 {
+    color: #f4f4f4;
+}
+
+#schedule {
+    height: 90vh;
+}
+
+#roster {
+    height: 90vh;
+}
+
+#roster h1 {
+    color: #f4f4f4;
+}
+
+.absolute_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 40%;
+    margin-left: 20%;
+}
+
+.absolute_content h2 {
+    font-size: 3em;
+    font-family: DINBOLD;
+    font-weight: 100;
+    margin-bottom: 0px;
+
+    font-family: DINBOLD;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.absolute_content h4 {
+    font-family: DIN;
+    font-weight: 100;
+
+    text-align: center;
+
+    margin-bottom: 10%;
+}
+
+.absolute_content button {
+    align-self: center;
+    padding: 15px 20px;
+}
+
+.discord_href {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    margin: 15px;
+    padding: 15px;
+
+    background-color: #f4f4f4;
+    color: #0f1923;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: Tungsten;
+    font-size: 25px;
+}
+
+.discord_href a img{
+    height: 55px;
+    width: 55px;
+}
+
+.absolute_content button {
+    pointer-events: auto;
+    
+    max-width: 300px;
+
+    padding: 15px 20px;
+    margin: 0;
+    position: relative;
+    background-color: transparent;
+}
+
+.button_stylistic {
+    padding: 5px;
+    flex: 1 auto;
+    width: 250px;
+
+    position: relative;
+    align-self: center;
+}
+
+.button_stylistic::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: calc(50% - .4rem);
+    left: -0%;
+    top: 0%;
+    width: calc(100% - 1px);
+    border: 1px solid #0f192344;
+    border-bottom: 0;
+}
+
+.button_stylistic::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: calc(50% - .4rem);
+    left: -0%;
+    bottom: 0%;
+    width: calc(100% - 1px);
+    border: 1px solid #0f192344;
+    border-top: 0;
+}
+
+#signup_page {
+    display: flex;
+    flex-direction: row;
+}
+
+#signup_page > div:not(:first-of-type) {
+    flex: 1 auto;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("https://cdn.gamer-network.net/2020/articles/2020-06-29-10-55/valorant-review-exacting-infuriating-sublime-1593424502084.jpg/EG11/thumbnail/1920x1075/format/jpg/quality/80");
+}
+
+#signup_form {
+    min-width: 20%;
+    flex: 0 0;
+
+    background-color: #F9F9F9;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+#signup_form > div{
+    
+    display: flex;
+    flex-direction: column;
+
+    width: 60%;
+
+    z-index: 1;
+}
+
+#signup_form > div > input{
+    border: none;
+
+    padding: 15px 20px;
+    color: #0f1923;
+
+    background-color: rgb(232, 240, 254);;
+
+    margin: 5px;
+    font-family: DIN;
+
+    outline: none;
+    border: 1px solid transparent;
+}
+
+#signup_form > div > input:focus {
+    background-color: #FF4655;
+    color: #f4f4f4;
+    border: 1px solid transparent;
+}
+
+#signup_form > div > input:focus::placeholder {
+    color: #f4f4f4;
+}
+
+#signup_form h2 {
+    font-family: Header;
+    font-weight: 100;
+    font-size: 2em;
+
+    position: relative;
+    margin-bottom: 2em;
+}
+
+#signup_form h2::before {
+    content: "PROJECT: LINK";
+    position: absolute;
+    font-size: 5rem;
+
+    white-space: nowrap;
+    left: -50%;
+    top: -80%;
+    z-index: 0;
+    color: transparent;
+    -webkit-text-stroke: 1px #0f1923;
+    opacity: 0.1;
+
+    z-index: 0;
+}
+
+#user_logged_in > img{
+    height: 35px;
+    width: 35px;
+    border-radius: 15px;
+}
+
+#user_logged_in {
+    width: fit-content;
+
+    font-family: Header;
+    font-weight: 100;
+    height: 100%;
+    border-bottom: 2px solid transparent;
+
+    margin-bottom: -2px;
+}
+
+#user_logged_in:hover {
+    border-bottom: 2px solid #FF4655;
+    cursor: pointer;
+    color: #ece8e1;
+}
+
+#users_name {
+    margin-right: 15px;
+}
+
+#signup_button {
+    margin: 5px;
+}
