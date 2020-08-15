@@ -288,6 +288,8 @@ section h1::before {
     -webkit-text-stroke: 1px #0f1923;
     opacity: 0.2;
     /*background-color: #0f1923;  */
+
+    pointer-events: none;
 }
 
 section:not(:first-of-type) h1::before {

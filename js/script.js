@@ -14,7 +14,7 @@ let _1 = {
 let _2 = {
     name: 'Highly-Competitive Pool',
     game: 'Valorant',
-    time: new Date(2020, 7, 16, 16),
+    time: new Date(2020, 7, 16, 18),
     more_info: `/tournaments?n=${this.game}`,
     cost: '$2/Per Person',
     platform: 'PC',
@@ -30,7 +30,7 @@ let _3 = {
     cost: '$1/Per Person',
     platform: 'PC',
     prize_pool: '$50+',
-    id: 'cyw8e94yr87'
+    id: 'ckeee94yr87'
 };
 
 let _4 = {
@@ -41,8 +41,16 @@ let _4 = {
     cost: 'Free',
     platform: 'PC',
     prize_pool: 'Discord Nitro',
-    id: 'cyw8e94yr87'
+    id: 'ckw8e24em57'
 };
+
+let team = {
+    name: 'The betrayors',
+    member_count: 5,
+    members: [{name: 'Edank', information: []}, {name: 'Edank', information: []}, {name: 'Edank', information: []}, {name: 'Edank', information: []}],
+    wins: 2,
+    tournaments: ['adw8e94rr87', 'cyw8e94yr87', 'ckw8e24em57']
+}
 
 createTournament(_1);
 createTournament(_2);
