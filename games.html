@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <title>Project: Link</title>
 </head>
-<body onload="loadData()">
+<body>
     <header>
         <div style="margin-right: 50px; align-items: center; height: 100%; align-items: center; display: flex">
             <h1>Project: Link </h1> 
@@ -19,9 +19,9 @@
         </div>
 
         <div style="flex: 1 auto; max-width: 300px; height: 100%; align-items: center; display: flex">
-            <a href="#schedule">SCHEDULE</a>
-            <a href="#roster">ROSTER</a>
-            <a href="#footer">ABOUT</a>
+            <a href="./index.html#schedule">SCHEDULE</a>
+            <a href="./index.html#roster">ROSTER</a>
+            <a href="./index.html#footer">ABOUT</a>
             <a href="./games.html">GAMES</a>
         </div>
 
@@ -37,35 +37,6 @@
         </div>
     </header>
 
-    <section style="position: relative;"> 
-        <div class="content">
-            <h1>Project: <br> Link</h1>
-
-            
-        </div>
-
-        <div class="absolute_content" id="home_page">
-            <h2 id="welcome_message">Welcome Challenger</h2>
-            <h4 id="welcome_sub">We are so glad your here! We are Project: Link; We host video gaming tournaments and events for SKC students in New Zealand. Click the button below to begin your journey.</h4>
-
-            <a class="button_stylistic" id="signup_href_main" href="./sub_pages/signup.html">
-                <div class="animation_button">
-                    <span class="offset_button"></span>
-                    <button>Get Started!</button>
-                    <p class="offset_text">Get Started!</p>
-                </div>
-            </a>
-        </div>
-
-        <img src="assets/Jett.png" id="character_overlay">
-<!--
-        <div class="discord_href">
-            <a href="https://discord.gg/SAce5Ad"><img src="./assets/discord.svg"></a>
-            <h3>Join Our Discord</h3>
-        </div>
--->        
-    </section>
-
     <section style="background-color: #FF4655;" id="schedule"> 
         <div class="content">
             <h1>Schedule</h1>
@@ -73,15 +44,7 @@
             <div id="tournaments" class="tm_div"></div>
         </div>
     </section>
-<!--
-    <section style="background-color: #0f1923;" id="roster"> 
-        <div class="content">
-            <h1>Roster</h1>
 
-            <div id="teams" class="tm_div"></div>
-        </div>
-    </section>
--->
     <div id='footer'>
         <div class="content">
             <div>
@@ -112,8 +75,6 @@
 
 </body>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="js/challonge.js"></script>
     <script src="js/tournament.js"></script>
     <script src="js/script.js"></script>
-    <script src="api/key.js"></script>
 </html>

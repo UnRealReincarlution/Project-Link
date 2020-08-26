@@ -50,7 +50,6 @@ html {
 .tm_div > div {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100%;
 }
 
@@ -58,6 +57,7 @@ html {
     transition: .1s ease;
     display: grid;
     grid-template-columns: 1fr 15% 10% 1fr 10%;
+    grid-template-rows: auto 1fr;
 
     justify-content: space-between;
     align-self: center;
@@ -73,7 +73,7 @@ html {
 
     border-radius: 0px;
     padding: 15px 20px;
-    height: 100%;
+    height: 50px;
 
     margin-top: 5px;
     margin-bottom: 5px;
@@ -82,10 +82,27 @@ html {
     z-index: 1;
 }
 
+.tournament > div:first-of-type {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-wrap: nowrap;
+}
+
 .tournament:hover {
     background-color: rgba(15, 15, 15, 0.5);
     color: #f4f4f4 !important;
-    cursor: context-menu;
+
+    cursor: pointer;
+}
+
+.tournament_desc *{
+    margin-top: 5px;
+    text-overflow: hidden;
+}
+
+.tournament_desc p:not(:first-of-type){
+    display: none;
 }
 
 
@@ -296,6 +313,10 @@ section:not(:first-of-type) h1::before {
     -webkit-text-stroke: 1px #f4f4f4;
 }
 
+#tournament h1::before {
+    -webkit-text-stroke: 1px #f4f4f4;
+}
+
 header {
     font-size: 14px !important;
     font-weight: 800;
@@ -460,6 +481,10 @@ button:hover {
     color: #f4f4f4;
 }
 
+#tournament h1 {
+    color: #f4f4f4;
+}
+
 #schedule {
     height: 90vh;
 }
@@ -478,14 +503,18 @@ button:hover {
     flex-direction: column;
 
     width: 40%;
+    height: 30%;
+    
     margin-left: 20%;
 }
 
 .absolute_content h2 {
-    font-size: 3em;
+    font-size: 4em;
     font-family: DINBOLD;
     font-weight: 100;
+
     margin-bottom: 0px;
+    margin-top: 0px;
 
     font-family: DINBOLD;
     text-transform: uppercase;
@@ -545,7 +574,7 @@ button:hover {
 
 .button_stylistic {
     padding: 5px;
-    flex: 1 auto;
+    flex: 0 0;
     width: 250px;
 
     position: relative;
@@ -693,4 +722,74 @@ button:hover {
 
 #signup_button {
     margin: 5px;
+}
+
+.full_screen {
+    position: fixed;
+
+    height: 100vh;
+    width: 100vw;
+
+    transition: .55s ease all;
+    z-index: 999;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    max-height: 100vh;
+    margin-top: 60px !important;
+}
+
+.full_screen:hover {
+    background-color: #f4f4f4 !important;
+    color: #0f1923 !important;
+    cursor: default;
+}
+
+#tournament_info {
+    background-color: #f4f4f4;
+    padding: 25px;
+
+    z-index: 10;
+}
+
+.tournament_flex {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    justify-content: space-between;
+}
+
+#tournament_info > div > div:not(.tournament_flex) {
+    background-color: #FF4655;
+    color: #f4f4f4 !important;
+    z-index: 10;
+}
+
+.tournament_team_list_element {
+    display: flex;
+
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.tournament_team_list_element img {
+    height: 50px;
+    width: 50px;
+
+    border-radius: 50%;
+}
+
+.tournament_team_list_element h2 {
+    color: #f4f4f4 !important;
+    margin: 10px !important;
+} 
+
+#tournament_header {
+    color: #f4f4f4;
 }
